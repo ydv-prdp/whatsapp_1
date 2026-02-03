@@ -58,9 +58,11 @@ app.post("/webhook",(req,res)=>{ //i want some
                    data:{
                        messaging_product:"whatsapp",
                        to:from,
-                       text:{
-                           body:"Hi.. I'm Pradeep Yadav, your message is "+msg_body
-                       }
+                      type: "text",
+                      text: {
+                            preview_url: false,
+                            body: "text-message-content"+msg_body
+                            }
                    },
                    headers:{
                        "Content-Type":"application/json"
